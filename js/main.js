@@ -1,11 +1,23 @@
 // ========== NAVBAR SCROLL EFFECT ==========
 const navbar = document.querySelector('.navbar');
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 60) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
+
+    if (currentScrollY < lastScrollY && currentScrollY > 60) {
+        navbar.classList.add('scroll-up');
+    } else {
+        navbar.classList.remove('scroll-up');
+    }
+
+    lastScrollY = currentScrollY;
 });
 
 // ========== MOBILE MENU TOGGLE ==========
@@ -474,18 +486,16 @@ heroForm.addEventListener('submit', function(e) {
     handleFormSubmit(heroForm, 'hero');
 });
 
-// ========== POPUP MODAL (50% scroll OR 5 seconds) ==========
+// ========== POPUP MODAL (every 5 seconds) ==========
 const popupOverlay = document.getElementById('popupOverlay');
 const popupClose = document.getElementById('popupClose');
 const popupForm = document.getElementById('popupForm');
-let popupShown = false;
+let popupOpen = false;
+let popupTimer = null;
 
 function showPopup() {
-    if (popupShown) return;
-    if (sessionStorage.getItem('rawoodPopupShown')) return;
-
-    popupShown = true;
-    sessionStorage.setItem('rawoodPopupShown', 'true');
+    if (popupOpen) return;
+    popupOpen = true;
     popupOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -493,19 +503,14 @@ function showPopup() {
 function closePopup() {
     popupOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    popupOpen = false;
+    // Re-show after 5 seconds
+    clearTimeout(popupTimer);
+    popupTimer = setTimeout(showPopup, 5000);
 }
 
-// Trigger 1: After 5 seconds
-setTimeout(showPopup, 5000);
-
-// Trigger 2: After 50% scroll
-window.addEventListener('scroll', function checkScroll() {
-    const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
-    if (scrollPercent >= 0.5) {
-        showPopup();
-        window.removeEventListener('scroll', checkScroll);
-    }
-});
+// First popup after 5 seconds
+popupTimer = setTimeout(showPopup, 5000);
 
 // Close handlers
 popupClose.addEventListener('click', closePopup);
