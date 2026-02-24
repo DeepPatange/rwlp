@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The RaWood Shed - Premium Natural Wood Slabs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/images/white logo.png" alt="The RaWood Shed" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#explore">Slab Collection</a></li>
+                <li><a href="#applications">Projects</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact" class="nav-cta" id="cta-nav-contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="assets/images/header.png" alt="Premium Wood Slab Table">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-line1">Premium Natural Wood Slabs</span>
+                    <span class="hero-line2">For Custom Furniture Interior</span>
+                    <span class="hero-line3">And Exterior Projects</span>
+                </h1>
+                <p class="hero-subtitle">Hand-selected live-edge and natural wood slabs, expertly seasoned for Indian climatic conditions and sourced from premium forests across the world.</p>
+                <div class="hero-usp">
+                    <span>100% Salvaged - No Trees Harmed</span>
+                    <span class="usp-divider">|</span>
+                    <span>Seasoned & Treated</span>
+                    <span class="usp-divider">|</span>
+                    <span>One-of-a-kind slabs</span>
+                    <span class="usp-divider">|</span>
+                    <span>Pan-India delivery</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-gold" id="cta-hero-catalogue">Request Slab Catalogue</a>
+                    <a href="https://wa.me/917715904248?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20wood%20slabs." class="btn btn-outline" id="cta-hero-whatsapp" target="_blank" rel="noopener noreferrer"><img src="assets/images/WP.png" alt="WhatsApp" class="btn-icon"> Enquire On WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-form-wrapper">
+                <form class="hero-form" id="heroForm">
+                    <div class="form-group">
+                        <label for="heroName">Name</label>
+                        <input type="text" id="heroName" name="name" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="heroEmail">Email</label>
+                        <input type="email" id="heroEmail" name="email" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="heroPhone">Phone</label>
+                        <input type="tel" id="heroPhone" name="phone" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="heroLooking">Looking For</label>
+                        <select id="heroLooking" name="looking_for" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="dining-table">Dining Table</option>
+                            <option value="work-desk">Work Desk</option>
+                            <option value="coffee-table">Coffee Table</option>
+                            <option value="bench">Bench</option>
+                            <option value="wall-art">Wall Art / Decor</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="heroMessage">Message</label>
+                        <textarea id="heroMessage" name="message" rows="3" placeholder=""></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-form-submit" id="cta-hero-submit">Enquire Now</button>
+                </form>
+            </div>
+        </div>
+        <h2 class="hero-explore-title">Explore the Beauty of Natural Wood</h2>
+    </section>
+
+    <!-- ========== EXPLORE GALLERY ========== -->
+    <section class="explore" id="explore">
+        <div class="explore-carousel">
+            <div class="explore-track">
+                <div class="explore-card"><img loading="lazy" src="assets/images/1.png" alt="Wood Slab 1"></div>
+                <div class="explore-card"><img loading="lazy" src="assets/images/2.png" alt="Wood Slab 2"></div>
+                <div class="explore-card"><img loading="lazy" src="assets/images/3.png" alt="Wood Slab 3"></div>
+                <div class="explore-card"><img loading="lazy" src="assets/images/4.png" alt="Wood Slab 4"></div>
+                <div class="explore-card"><img loading="lazy" src="assets/images/Group 8.png" alt="Wood Slab 5"></div>
+                <div class="explore-card"><img loading="lazy" src="assets/images/Group 9.png" alt="Wood Slab 6"></div>
+                <div class="explore-card"><img loading="lazy" src="assets/images/Group 10.png" alt="Wood Slab 7"></div>
+                <div class="explore-card"><img loading="lazy" src="assets/images/Group 11.png" alt="Wood Slab 8"></div>
+            </div>
+        </div>
+        <div class="explore-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT US ========== -->
+    <section class="about" id="about">
+        <div class="about-wrapper">
+            <div class="about-container">
+                <div class="about-left">
+                    <div class="about-heading-box">
+                        <h2 class="section-heading">ABOUT US</h2>
+                    </div>
+                    <h3 class="about-subtitle">Our Wood Slabs + Differentiation</h3>
+                    <p class="about-text">Unlike finished wooden furniture or mass-produced wood products, The RaWood Shed offer complete creative freedom. They serve as the foundation for bespoke furniture and architectural elements, allowing designers, craftsmen, and homeowners to create pieces that are truly original. The RaWood Shed specialises exclusively in natural wood slabs, not finished goods.</p>
+                </div>
+                <div class="about-right">
+                    <img loading="lazy" src="assets/images/about us image.png" alt="Natural Wood Table" class="about-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CORE ADVANTAGES ========== -->
+    <section class="advantages" id="advantages">
+        <div class="advantages-container">
+            <div class="advantages-left">
+                <h2 class="section-heading advantages-heading">OUR CORE<br>ADVANTAGES</h2>
+                <img loading="lazy" src="assets/images/core advantages.png" alt="Wood desk" class="advantages-image">
+            </div>
+            <div class="advantages-right">
+                <div class="advantage-item">
+                    <span class="advantage-number">01</span>
+                    <div class="advantage-body">
+                        <img loading="lazy" src="assets/images/core advantages BG.png" alt="" class="advantage-bg">
+                        <div class="advantage-text">
+                            <h4>One of a Kind</h4>
+                            <p>Every slab is shaped by nature — no two pieces share the same grain, edge, or tone, ensuring your furniture is as unique as your vision.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-number">02</span>
+                    <div class="advantage-body">
+                        <img loading="lazy" src="assets/images/core advantages BG.png" alt="" class="advantage-bg">
+                        <div class="advantage-text">
+                            <h4>No Two Woods Are Ever the Same</h4>
+                            <p>Each slab tells its own story — with unique patterns, natural textures, and distinct character that make every piece truly irreplaceable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-number">03</span>
+                    <div class="advantage-body">
+                        <img loading="lazy" src="assets/images/core advantages BG.png" alt="" class="advantage-bg">
+                        <div class="advantage-text">
+                            <h4>Seasoned and Treated</h4>
+                            <p>All our slabs are properly kiln-dried and treated to prevent warping, cracking, and moisture damage — ensuring long-lasting quality and stability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-number">04</span>
+                    <div class="advantage-body">
+                        <img loading="lazy" src="assets/images/core advantages BG.png" alt="" class="advantage-bg">
+                        <div class="advantage-text">
+                            <h4>Built to Stand the Test of Time</h4>
+                            <p>Our slabs are designed to be heirloom pieces — crafted for durability and timeless appeal that will serve you for generations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-number">05</span>
+                    <div class="advantage-body">
+                        <img loading="lazy" src="assets/images/core advantages BG.png" alt="" class="advantage-bg">
+                        <div class="advantage-text">
+                            <h4>Spontaneous Delivery</h4>
+                            <p>We offer quick and efficient delivery across India, with secure packaging to ensure your slab arrives in perfect condition.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <span class="advantage-number">06</span>
+                    <div class="advantage-body">
+                        <img loading="lazy" src="assets/images/core advantages BG.png" alt="" class="advantage-bg">
+                        <div class="advantage-text">
+                            <h4>Global Wood Sourcing</h4>
+                            <p>We source premium wood species from forests across Southeast Asia, Africa, and South America to offer you the finest selection available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== APPLICATIONS ========== -->
+    <section class="applications" id="applications">
+        <div class="applications-container">
+            <div class="applications-card">
+                <h2 class="section-heading-center applications-heading">APPLICATIONS</h2>
+                <p class="applications-subtitle">Our Wood Slabs Are Ideal For</p>
+            </div>
+            <div class="applications-grid">
+                <div class="application-item">
+                    <div class="application-card">
+                        <img loading="lazy" src="assets/images/application 1.png" alt="Table & Bench">
+                    </div>
+                    <p class="application-label">Table & Bench</p>
+                </div>
+                <div class="application-item">
+                    <div class="application-card">
+                        <img loading="lazy" src="assets/images/application 2.png" alt="Work Desk & Office Furniture">
+                    </div>
+                    <p class="application-label">Work Desk & Office Furniture</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHAT YOU SEE IS WHAT YOU GET ========== -->
+    <section class="whatyousee" id="whatyousee">
+        <div class="whatyousee-container">
+            <div class="whatyousee-left">
+                <h2 class="section-heading">WHAT YOU SEE<br>IS WHAT YOU GET</h2>
+                <div class="whatyousee-divider"></div>
+                <p class="whatyousee-intro">When you enquire, you receive :</p>
+                <ul class="whatyousee-list">
+                    <li><span class="list-marker">>></span> Actual images or videos of the selected slab.</li>
+                    <li><span class="list-marker">>></span> Clear specifications including length, width, and thickness.</li>
+                    <li><span class="list-marker">>></span> Disclosure of natural characteristics such as knots or grain variation.</li>
+                    <li><span class="list-marker">>></span> Guidance on finishing, polishing, and application suitability.</li>
+                </ul>
+                <p class="whatyousee-note">"Natural cracks, knots, and irregularities are inherent features of genuine wood slabs and enhance their authenticity."</p>
+            </div>
+            <div class="whatyousee-right">
+                <img loading="lazy" src="assets/images/what u see 1.png" alt="Wood furniture showcase" class="whatyousee-img1">
+                <img loading="lazy" src="assets/images/what u see 1 2.png" alt="Wood table showcase" class="whatyousee-img2">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE THE RAWOOD SHED ========== -->
+    <section class="whychoose" id="whychoose">
+        <div class="whychoose-container">
+            <h2 class="section-heading-center">WHY CHOOSE<br>THE RAWOOD SHED</h2>
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-col col-criteria">CRITERIA</div>
+                    <div class="comparison-col col-rawood">THE<br>RAWOOD SHED</div>
+                    <div class="comparison-col col-timber">CONVENTIONAL<br>TIMBER SUPPLIERS</div>
+                    <div class="comparison-col col-furniture">FINISHED<br>FURNITURE BRANDS</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-col col-feature">Unique Live-Edge Slabs</div>
+                    <div class="comparison-col col-rawood"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                    <div class="comparison-col col-timber comp-text-val">Limited</div>
+                    <div class="comparison-col col-furniture"><img loading="lazy" src="assets/images/cross.png" alt="No" class="comparison-icon"></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-col col-feature">Climate-Seasoned Wood</div>
+                    <div class="comparison-col col-rawood"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                    <div class="comparison-col col-timber comp-text-val">Limited</div>
+                    <div class="comparison-col col-furniture comp-text-val">Not Applicable</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-col col-feature">Global Wood Sourcing</div>
+                    <div class="comparison-col col-rawood"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                    <div class="comparison-col col-timber"><img loading="lazy" src="assets/images/cross.png" alt="No" class="comparison-icon"></div>
+                    <div class="comparison-col col-furniture"><img loading="lazy" src="assets/images/cross.png" alt="No" class="comparison-icon"></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-col col-feature">Custom Project Material</div>
+                    <div class="comparison-col col-rawood"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                    <div class="comparison-col col-timber comp-text-val">Rare</div>
+                    <div class="comparison-col col-furniture"><img loading="lazy" src="assets/images/cross.png" alt="No" class="comparison-icon"></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-col col-feature">Slab Visibility Before Purchase</div>
+                    <div class="comparison-col col-rawood"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                    <div class="comparison-col col-timber"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                    <div class="comparison-col col-furniture"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-col col-feature">Spontaneous Delivery</div>
+                    <div class="comparison-col col-rawood"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                    <div class="comparison-col col-timber"><img loading="lazy" src="assets/images/tick.png" alt="Yes" class="comparison-icon"></div>
+                    <div class="comparison-col col-furniture"><img loading="lazy" src="assets/images/cross.png" alt="No" class="comparison-icon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRUST AND CREDIBILITY ========== -->
+    <section class="trust" id="trust">
+        <div class="trust-container">
+            <h2 class="trust-heading">TRUST AND CREDIBILITY</h2>
+            <div class="trust-cards">
+                <div class="trust-card">
+                    <div class="trust-card-img">
+                        <img loading="lazy" src="assets/images/trust 1.png" alt="Interior Designers">
+                    </div>
+                    <p class="trust-card-label">INTERIOR DESIGNERS & ARCHITECTS</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-img">
+                        <img loading="lazy" src="assets/images/trust 2.png" alt="Custom Home Builders">
+                    </div>
+                    <p class="trust-card-label">CUSTOM HOME BUILDERS</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-card-img">
+                        <img loading="lazy" src="assets/images/trust 1-1.png" alt="Interior Designers">
+                    </div>
+                    <p class="trust-card-label">INTERIOR DESIGNERS & ARCHITECTS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials" id="testimonials">
+        <img loading="lazy" src="assets/images/quote.png" class="testimonials-quote-img" alt="">
+        <div class="testimonials-container">
+            <div class="testimonials-slider">
+                <div class="testimonials-track">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Superb quality & flawless finishing. You can clearly see the craftsmanship in every detail. Truly exceeded our expectations."</p>
+                        <p class="testimonial-author">Ananya Iyer, Bengaluru</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Excellent workmanship and timely delivery. The product arrived securely packed & looked absolutely premium."</p>
+                        <p class="testimonial-author">Kunal Shah, Ahmedabad</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The natural grain and texture of every slab is simply breathtaking. Truly one-of-a-kind pieces that elevate any interior."</p>
+                        <p class="testimonial-author">Rajan Mehta, Mumbai</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-bottom">
+                <div class="testimonials-delivery">
+                    <h3>PAN-INDIA DELIVERY<br>WITH SECURE PACKAGING<br>AND HANDLING</h3>
+                    <div class="testimonials-nav">
+                        <button class="testimonial-arrow-btn prev-btn">&#8249;</button>
+                        <button class="testimonial-arrow-btn next-btn">&#8250;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <div class="faq-left">
+                <h2 class="faq-heading">FREQUENTLY<br>ASKED QUESTIONS</h2>
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Are the slabs ready to use?</span>
+                            <img loading="lazy" src="assets/images/Group 15.png" alt="Toggle" class="faq-toggle-icon">
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, all our slabs are kiln-dried and treated. Depending on the project, additional finishing (polishing, oiling, lacquer) may be applied based on your preference.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I request specific dimensions?</span>
+                            <img loading="lazy" src="assets/images/Group 15.png" alt="Toggle" class="faq-toggle-icon">
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we can customize slabs to your preferred dimensions. However, since each slab is natural, we recommend choosing from available stock for the best results.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you deliver across India?</span>
+                            <img loading="lazy" src="assets/images/Group 15.png" alt="Toggle" class="faq-toggle-icon">
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! We offer secure pan-India delivery with professional packaging to ensure your slab arrives in pristine condition.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I view the slab before confirming?</span>
+                            <img loading="lazy" src="assets/images/Group 15.png" alt="Toggle" class="faq-toggle-icon">
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We provide actual images and videos of the exact slab you'll receive. You can also visit our warehouse by appointment to view slabs in person.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-right">
+                <img loading="lazy" src="assets/images/faq.png" alt="Wood table" class="faq-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA CAROUSEL ========== -->
+    <section class="cta-carousel-section">
+        <div class="cta-carousel">
+            <div class="cta-carousel-track">
+                <div class="cta-carousel-card"><img loading="lazy" src="assets/images/1.png" alt="Wood Slab 1"></div>
+                <div class="cta-carousel-card"><img loading="lazy" src="assets/images/2.png" alt="Wood Slab 2"></div>
+                <div class="cta-carousel-card"><img loading="lazy" src="assets/images/3.png" alt="Wood Slab 3"></div>
+                <div class="cta-carousel-card"><img loading="lazy" src="assets/images/4.png" alt="Wood Slab 4"></div>
+                <div class="cta-carousel-card"><img loading="lazy" src="assets/images/Group 8.png" alt="Wood Slab 5"></div>
+                <div class="cta-carousel-card"><img loading="lazy" src="assets/images/Group 9.png" alt="Wood Slab 6"></div>
+                <div class="cta-carousel-card"><img loading="lazy" src="assets/images/Group 10.png" alt="Wood Slab 7"></div>
+                <div class="cta-carousel-card"><img loading="lazy" src="assets/images/Group 11.png" alt="Wood Slab 8"></div>
+            </div>
+        </div>
+        <div class="cta-carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+        </div>
+    </section>
+
+    <!-- ========== BUILD TIMELESS CTA ========== -->
+    <section class="cta-section" id="contact">
+        <div class="cta-bg">
+            <img loading="lazy" src="assets/images/build timeless BG.png" alt="" class="cta-bg-img">
+        </div>
+        <div class="cta-container">
+            <h2 class="cta-title">BUILD TIMELESS FURNITURE<br>WITH AUTHENTIC NATURAL WOOD</h2>
+            <p class="cta-subtitle">Connect with us now to select the right slab — and turn your vision into reality.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-gold" id="cta-bottom-catalogue">Request Slab Catalogue</a>
+                <a href="https://wa.me/917715904248?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20wood%20slabs." class="btn btn-outline-dark" id="cta-bottom-whatsapp" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/images/WP.png" alt="WhatsApp" class="btn-icon"> WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" id="footer">
+        <div class="footer-bg">
+            <img loading="lazy" src="assets/images/Footer BG 1.png" alt="" class="footer-bg-img">
+        </div>
+        <div class="footer-container">
+            <div class="footer-top-row">
+                <div class="footer-col footer-brand">
+                    <div class="footer-logo">
+                        <img loading="lazy" src="assets/images/black logo.png" alt="The RaWood Shed" class="footer-logo-img">
+                    </div>
+                    <p class="footer-tagline">Natural Raw Wood.<br>Elevated Interiors</p>
+                    <div class="footer-socials">
+                        <a href="#"><img loading="lazy" src="assets/images/transparent-Photoroom - 2026-02-18T194327.606.png" alt="Facebook"></a>
+                        <a href="#"><img loading="lazy" src="assets/images/imgi_24_instagram.png" alt="Instagram"></a>
+                        <a href="#"><img loading="lazy" src="assets/images/transparent-Photoroom - 2026-02-18T194255.394.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-map-col">
+                    <a href="https://maps.app.goo.gl/A5FKTrji2gpMmQ6F9" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/images/map.png" alt="Location Map" class="footer-map"></a>
+                </div>
+            </div>
+            <div class="footer-bottom-row">
+                <div class="footer-col footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#explore">Slabs</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-address">
+                    <h4>Address</h4>
+                    <p>Mobile: +91 77159 04248</p>
+                    <p>Email: therawoodshed@gmail.com</p>
+                    <p>Address: C/o Lachmandas Saw Mills, 99 Reay Road, Near Ghodapdev Temple, Mumbai – 400033 (Next to Patidar Saw Mill)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== MOBILE FIXED CTA BAR ========== -->
+    <div class="mobile-cta-bar" id="mobileCTABar">
+        <a href="#contact" class="mobile-cta-btn mobile-cta-enquire" id="cta-mobile-enquire">Enquire Now</a>
+        <a href="https://wa.me/917715904248?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20wood%20slabs." class="mobile-cta-btn mobile-cta-whatsapp" id="cta-mobile-whatsapp" target="_blank" rel="noopener noreferrer">
+            <img loading="lazy" src="assets/images/WP.png" alt="WhatsApp" class="mobile-cta-icon"> WhatsApp
+        </a>
+    </div>
+
+    <!-- ========== POPUP ENQUIRY MODAL ========== -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-modal">
+            <button class="popup-close" id="popupClose" aria-label="Close popup">&times;</button>
+            <h3 class="popup-title">Get Your Free Slab Catalogue</h3>
+            <p class="popup-subtitle">Fill in your details and we will reach out to you.</p>
+            <form class="popup-form" id="popupForm">
+                <div class="form-group">
+                    <label for="popupName">Name</label>
+                    <input type="text" id="popupName" name="name" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="popupEmail">Email</label>
+                    <input type="email" id="popupEmail" name="email" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="popupPhone">Phone</label>
+                    <input type="tel" id="popupPhone" name="phone" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="popupLooking">Looking For</label>
+                    <select id="popupLooking" name="looking_for" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="dining-table">Dining Table</option>
+                        <option value="work-desk">Work Desk</option>
+                        <option value="coffee-table">Coffee Table</option>
+                        <option value="bench">Bench</option>
+                        <option value="wall-art">Wall Art / Decor</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="popupMessage">Message</label>
+                    <textarea id="popupMessage" name="message" rows="3" placeholder=""></textarea>
+                </div>
+                <button type="submit" class="btn btn-form-submit" id="cta-popup-submit">Enquire Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
