@@ -49,10 +49,11 @@ const totalCards = exploreCards.length;
 
 function getCarouselConfig() {
     const w = window.innerWidth;
-    if (w <= 480) return { visible: 1, gap: 12 };
-    if (w <= 768) return { visible: 2, gap: 16 };
-    if (w <= 1024) return { visible: 3, gap: 32 };
-    return { visible: 4, gap: 54 };
+    const computedGap = parseFloat(getComputedStyle(exploreTrack).gap) || 16;
+    if (w <= 480) return { visible: 1, gap: computedGap };
+    if (w <= 768) return { visible: 2, gap: computedGap };
+    if (w <= 1024) return { visible: 3, gap: computedGap };
+    return { visible: 4, gap: computedGap };
 }
 
 function getTotalSlides() {
@@ -190,7 +191,7 @@ let testimonialIndex = 0;
 const totalTestimonials = testimonialCards.length;
 
 function getTestimonialGap() {
-    return window.innerWidth <= 768 ? 16 : 20;
+    return parseFloat(getComputedStyle(testimonialsTrack).gap) || 20;
 }
 
 function goToTestimonial(index) {
@@ -301,10 +302,11 @@ const ctaTotalCards = ctaCards.length;
 
 function getCtaCarouselConfig() {
     const w = window.innerWidth;
-    if (w <= 480) return { visible: 1, gap: 12 };
-    if (w <= 768) return { visible: 2, gap: 16 };
-    if (w <= 1024) return { visible: 3, gap: 32 };
-    return { visible: 4, gap: 54 };
+    const computedGap = parseFloat(getComputedStyle(ctaTrack).gap) || 16;
+    if (w <= 480) return { visible: 1, gap: computedGap };
+    if (w <= 768) return { visible: 2, gap: computedGap };
+    if (w <= 1024) return { visible: 3, gap: computedGap };
+    return { visible: 4, gap: computedGap };
 }
 
 function getCtaTotalSlides() {
@@ -444,39 +446,10 @@ function getTimestamp() {
     return new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 }
 
-// Submit form data to Google Sheets via Apps Script
-// IMPORTANT: Replace the URL below with your deployed Google Apps Script web app URL
-// Steps: 1) Create a Google Sheet  2) Extensions > Apps Script  3) Paste the doPost code
-// 4) Deploy > Web App > Execute as Me > Access: Anyone  5) Copy the URL here
-const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
-
-function submitToGoogleSheets(formData) {
-    return fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-    });
-}
-
-// Collect form fields + UTM + metadata, submit, then redirect
+// Collect form fields + UTM + metadata, then redirect
+// TODO: Add Google Sheets integration
 function handleFormSubmit(form, formSource) {
-    const utmParams = getUTMParams();
-    const formData = {
-        timestamp: getTimestamp(),
-        name: form.querySelector('[name="name"]').value,
-        email: form.querySelector('[name="email"]').value,
-        phone: form.querySelector('[name="phone"]').value,
-        looking_for: form.querySelector('[name="looking_for"]').value,
-        message: form.querySelector('[name="message"]').value,
-        form_source: formSource,
-        page_url: window.location.href,
-        ...utmParams
-    };
-
-    submitToGoogleSheets(formData)
-        .then(() => { window.location.href = 'thankyou.html'; })
-        .catch(() => { window.location.href = 'thankyou.html'; });
+    window.location.href = 'thankyou.html';
 }
 
 // ========== HERO FORM SUBMISSION ==========
@@ -486,31 +459,39 @@ heroForm.addEventListener('submit', function(e) {
     handleFormSubmit(heroForm, 'hero');
 });
 
-// ========== POPUP MODAL (every 5 seconds) ==========
+// ========== POPUP MODAL (50% scroll OR 5 seconds) ==========
 const popupOverlay = document.getElementById('popupOverlay');
 const popupClose = document.getElementById('popupClose');
 const popupForm = document.getElementById('popupForm');
 let popupOpen = false;
-let popupTimer = null;
+let popupShown = false;
 
 function showPopup() {
-    if (popupOpen) return;
+    if (popupOpen || popupShown) return;
     popupOpen = true;
+    popupShown = true;
     popupOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+    // Clean up triggers once shown
+    clearTimeout(popupTimer);
+    window.removeEventListener('scroll', onScrollCheck);
 }
 
 function closePopup() {
     popupOverlay.classList.remove('active');
     document.body.style.overflow = '';
     popupOpen = false;
-    // Re-show after 5 seconds
-    clearTimeout(popupTimer);
-    popupTimer = setTimeout(showPopup, 5000);
 }
 
-// First popup after 5 seconds
-popupTimer = setTimeout(showPopup, 5000);
+// Trigger 1: after 5 seconds
+const popupTimer = setTimeout(showPopup, 5000);
+
+// Trigger 2: after 50% scroll
+function onScrollCheck() {
+    const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    if (scrollPercent >= 0.5) showPopup();
+}
+window.addEventListener('scroll', onScrollCheck, { passive: true });
 
 // Close handlers
 popupClose.addEventListener('click', closePopup);
