@@ -321,21 +321,22 @@ ul {
 /* ========== HERO ========== */
 .hero {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
 .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 88vh;
+    grid-row: 1;
+    grid-column: 1;
+    position: relative;
     z-index: 0;
     overflow: hidden;
+    min-height: 88vh;
 }
 
 .hero-bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -354,6 +355,8 @@ ul {
 }
 
 .hero-inner {
+    grid-row: 1;
+    grid-column: 1;
     position: relative;
     z-index: 2;
     max-width: 1440px;
@@ -2145,12 +2148,13 @@ ul {
     }
 
     .hero-bg {
-        height: 63vh;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: auto;
+        height: 63vh;
+        min-height: auto;
     }
 
     .hero-bg img {
