@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The RaWood Shed - Premium Natural Wood Slabs</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Normalize display scaling on Windows laptops (125%/150% scaling)
+        // so the site looks the same as on Mac at 100%
+        (function() {
+            var isWindows = navigator.userAgent.indexOf('Windows') !== -1;
+            if (isWindows && window.devicePixelRatio > 1) {
+                document.documentElement.style.zoom = (1 / window.devicePixelRatio);
+            }
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
