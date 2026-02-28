@@ -883,6 +883,7 @@ ul {
 .applications {
     padding: clamp(50px, 6vw, 90px) 0;
     background: var(--color-bg);
+    overflow: hidden;
 }
 
 .applications-container {
@@ -899,9 +900,9 @@ ul {
     top: 0;
     left: -5vw;
     right: -5vw;
-    height: 60%;
-    background: #E8DFCF;
-    border-radius: 24px;
+    height: 45%;
+    background: linear-gradient(180deg, #E8DFCF 0%, #F2EBE0 70%, transparent 100%);
+    border-radius: 24px 24px 0 0;
     z-index: 0;
 }
 
@@ -2453,7 +2454,7 @@ ul {
     }
 
     .applications-container {
-        padding: 0 16px;
+        padding: 24px 16px 0;
     }
 
     .applications-heading {

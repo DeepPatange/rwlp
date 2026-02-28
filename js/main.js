@@ -459,25 +459,18 @@ heroForm.addEventListener('submit', function(e) {
     handleFormSubmit(heroForm, 'hero');
 });
 
-// ========== POPUP MODAL (50% scroll OR 5 seconds) ==========
+// ========== POPUP MODAL (75% scroll OR 15 seconds, repeats each time) ==========
 const popupOverlay = document.getElementById('popupOverlay');
 const popupClose = document.getElementById('popupClose');
 const popupForm = document.getElementById('popupForm');
 let popupOpen = false;
-let popupShown = false;
-
-function showPopup() {
-    if (popupOpen || popupShown) return;
-    openPopup();
-}
+let scrollTriggered = false;
 
 function openPopup() {
+    if (popupOpen) return;
     popupOpen = true;
-    popupShown = true;
     popupOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    clearTimeout(popupTimer);
-    window.removeEventListener('scroll', onScrollCheck);
 }
 
 function closePopup() {
@@ -494,13 +487,19 @@ document.querySelectorAll('#cta-hero-catalogue, #cta-bottom-catalogue').forEach(
     });
 });
 
-// Trigger 1: after 5 seconds
-const popupTimer = setTimeout(showPopup, 5000);
+// Trigger 1: after 15 seconds
+setTimeout(openPopup, 15000);
 
-// Trigger 2: after 50% scroll
+// Trigger 2: every time user scrolls past 75% (resets when they scroll back up)
 function onScrollCheck() {
-    const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-    if (scrollPercent >= 0.5) showPopup();
+    var scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+    if (scrollPercent >= 0.75 && !scrollTriggered && !popupOpen) {
+        scrollTriggered = true;
+        openPopup();
+    }
+    if (scrollPercent < 0.5) {
+        scrollTriggered = false;
+    }
 }
 window.addEventListener('scroll', onScrollCheck, { passive: true });
 
