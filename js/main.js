@@ -446,10 +446,44 @@ function getTimestamp() {
     return new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
 }
 
-// Collect form fields + UTM + metadata, then redirect
-// TODO: Add Google Sheets integration
+// Google Sheets Web App URL (replace with your deployed Apps Script URL)
+var GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyn2KjPGO00aF1BwtcP1au9HLd7tNoDx48azcleU-kbEJ9YjGJqpmqIxbj04VGOUr9i/exec';
+
+// Collect form fields + UTM + metadata, then send to Google Sheets
 function handleFormSubmit(form, formSource) {
-    window.location.href = 'thankyou.html';
+    var formData = new FormData(form);
+    var utm = getUTMParams();
+
+    var data = {
+        name: formData.get('name') || '',
+        email: formData.get('email') || '',
+        phone: formData.get('phone') || '',
+        looking_for: formData.get('looking_for') || '',
+        message: formData.get('message') || '',
+        utm_source: utm.utm_source,
+        utm_campaign: utm.utm_campaign,
+        utm_medium: utm.utm_medium,
+        utm_content: utm.utm_content,
+        date: getTimestamp()
+    };
+
+    // Fetch IP address then submit
+    fetch('https://api.ipify.org?format=json')
+        .then(function(res) { return res.json(); })
+        .then(function(ipData) { data.ip_address = ipData.ip; })
+        .catch(function() { data.ip_address = ''; })
+        .finally(function() {
+            // Send to Google Sheets
+            fetch(GOOGLE_SHEETS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).catch(function() {});
+
+            // Redirect immediately (don't wait for response)
+            window.location.href = 'thankyou.html';
+        });
 }
 
 // ========== HERO FORM SUBMISSION ==========
