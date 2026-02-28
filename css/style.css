@@ -910,9 +910,6 @@ ul {
     color: #6B3A2A;
     font-weight: 700;
     margin-bottom: 8px;
-    border-bottom: 3px solid #6B3A2A;
-    display: inline-block;
-    padding-bottom: 6px;
     position: relative;
     z-index: 1;
 }

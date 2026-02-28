@@ -468,11 +468,14 @@ let popupShown = false;
 
 function showPopup() {
     if (popupOpen || popupShown) return;
+    openPopup();
+}
+
+function openPopup() {
     popupOpen = true;
     popupShown = true;
     popupOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    // Clean up triggers once shown
     clearTimeout(popupTimer);
     window.removeEventListener('scroll', onScrollCheck);
 }
@@ -482,6 +485,14 @@ function closePopup() {
     document.body.style.overflow = '';
     popupOpen = false;
 }
+
+// "Request Slab Catalogue" buttons open popup
+document.querySelectorAll('#cta-hero-catalogue, #cta-bottom-catalogue').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openPopup();
+    });
+});
 
 // Trigger 1: after 5 seconds
 const popupTimer = setTimeout(showPopup, 5000);
